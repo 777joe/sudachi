@@ -19,11 +19,9 @@ jobs:
         git clone --recursive https://github.com/sudachi-emu/sudachi.git
         
     - name: set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: gradle
+      run : |
+         sudo apt install openjdk-17-jdk -y
+         export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
     
     - name: Install Vulkan SDK
       uses: humbletim/install-vulkan-sdk@v1.1.1
