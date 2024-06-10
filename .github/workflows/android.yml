@@ -22,7 +22,7 @@ jobs:
         cache: gradle
         
     - name: Go to android dir
-      run: cd src/android
+      run: cd $GITHUB_WORKSPACE/src/android
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
