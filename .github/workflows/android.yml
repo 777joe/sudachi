@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: clone repo
-    - run: |
+      run: |
         cd /home/runner/work
         git clone --recursive https://github.com/sudachi-emu/sudachi.git
         
