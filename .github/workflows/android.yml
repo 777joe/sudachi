@@ -12,16 +12,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: set up JDK 17
+      run : |
+         sudo apt update
+         sudo apt install openjdk-17-jdk -y
+         export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+    
     - name: clone repo
       run: |
         mkdir -p /home/runner/work/tmp
         cd /home/runner/work/tmp
         git clone --recursive https://github.com/sudachi-emu/sudachi.git
-        
-    - name: set up JDK 17
-      run : |
-         sudo apt install openjdk-17-jdk -y
-         export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
     
     - name: Install Vulkan SDK
       uses: humbletim/install-vulkan-sdk@v1.1.1
