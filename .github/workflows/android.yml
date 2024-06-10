@@ -14,7 +14,8 @@ jobs:
     steps:
     - name: clone repo
       run: |
-        cd /home/runner/work
+        mkdir -p /home/runner/work/tmp
+        cd /home/runner/work/tmp
         git clone --recursive https://github.com/sudachi-emu/sudachi.git
         
     - name: set up JDK 17
@@ -33,11 +34,11 @@ jobs:
     - name: Go to android dir and build
       run: |
         pwd
-        cd /home/runner/work/sudachi/src/android
+        cd /home/runner/work/tmp/sudachi/src/android
         chmod a+x gradlew
         ./gradlew build
       
     - uses: actions/upload-artifact@v4
       with:
         name: Sudachi-emu
-        path: /bin
+        path: /home/runner/work/tmp/sudachi/bin/*
