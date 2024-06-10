@@ -22,7 +22,7 @@ jobs:
         cache: gradle
         
     - name: Go to android dir
-      run: ls /home/runner/work
+      run: ls /home/runner/work/sudachi
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
