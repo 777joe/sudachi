@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: set up JDK 17
+    - name: set up JDK 11
       run : |
          sudo apt update
-         sudo apt install openjdk-17-jdk -y
-         export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+         sudo apt install openjdk-11-jdk -y
+         export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
     
     - name: clone repo
       run: |
