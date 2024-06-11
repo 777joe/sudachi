@@ -1,10 +1,7 @@
 name: Android CI
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  [workflow_dispatch]
 
 jobs:
   build:
@@ -26,7 +23,7 @@ jobs:
       run: |
         mkdir -p /home/runner/work/tmp
         cd /home/runner/work/tmp
-        git clone --recursive https://github.com/sudachi-emu/sudachi.git
+        git clone --recursive --depth 1 https://github.com/sudachi-emu/sudachi.git
     
     - name: Install Vulkan SDK
       uses: humbletim/install-vulkan-sdk@v1.1.1
